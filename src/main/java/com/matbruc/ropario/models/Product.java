@@ -16,6 +16,10 @@ public class Product {
     private Type type;
 
     @ManyToOne
+    @JoinColumn(name = "gender_id")
+    private Gender gender;
+
+    @ManyToOne
     @JoinColumn(name = "age_id")
     private Age age;
 
@@ -43,6 +47,14 @@ public class Product {
 
     public void setType(Type type) {
         this.type = type;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public String getDescription() {
