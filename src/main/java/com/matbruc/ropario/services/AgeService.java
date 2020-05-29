@@ -27,13 +27,13 @@ public class AgeService implements IAgeService {
     }
 
     @Override
-    public void addAge(Age age) {
-        ageRespository.save(age);
+    public Age addAge(Age age) {
+        return ageRespository.save(age);
     }
 
     @Override
-    public void updateAge(Age age) {
-        ageRespository.save(age);
+    public Age updateAge(Age age) {
+        return ageRespository.save(age);
     }
 
     @Override

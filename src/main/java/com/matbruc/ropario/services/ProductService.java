@@ -23,17 +23,17 @@ public class ProductService implements IProductService {
 
     @Override
     public Product getProductById(long productId) {
-        return productRepository.findById(productId).get();
+        return productRepository.getOne(productId);
     }
 
     @Override
-    public void addProduct(Product product) {
-        productRepository.save(product);
+    public Product addProduct(Product product) {
+        return productRepository.save(product);
     }
 
     @Override
-    public void updateProduct(Product product) {
-        productRepository.save(product);
+    public Product updateProduct(Product product) {
+        return productRepository.save(product);
     }
 
     @Override

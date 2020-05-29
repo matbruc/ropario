@@ -31,11 +31,11 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> addProduct(@RequestBody Product product, UriComponentsBuilder builder) {
+    public ResponseEntity<Product> addProduct(@RequestBody Product product, UriComponentsBuilder builder) {
         productService.addProduct(product);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(builder.path("/api/v1/products").buildAndExpand(product.getId()).toUri());
-        return new ResponseEntity<>(headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(product, headers, HttpStatus.CREATED);
     }
 
     @PutMapping

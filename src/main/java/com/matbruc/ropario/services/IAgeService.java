@@ -7,7 +7,7 @@ import java.util.List;
 public interface IAgeService {
     List<Age> getAllAges();
     Age getAgeById(long ageId);
-    void addAge(Age age);
-    void updateAge(Age age);
+    Age addAge(Age age);
+    Age updateAge(Age age);
     void deleteAge(long ageId);
 }
